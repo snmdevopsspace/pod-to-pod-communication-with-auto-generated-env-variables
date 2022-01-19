@@ -1,0 +1,26 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+POD to POD communication with auto generated ENV variables
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+snmsd-auth
+snmsd-users
+
+Go inside k8s directory:
+
+kubectl apply -f=users-service.yaml -f=users-deployment.yaml -f=auth-service.yaml -f=auth-deployment.yaml
+
+
+Auto Generated ENV HOST 
+
+Like we have a service name - "snmsd-auth-service"
+
+service name in uppercase in snake case followed by _SERVICE_HOST
+
+K8s automatically configure or creates that holds "Cluster IP address"
+
+for ex -
+service name: snmsd-auth-service
+it will become - SNMSD_AUTH_SERVICE_SERVICE_HOST
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++

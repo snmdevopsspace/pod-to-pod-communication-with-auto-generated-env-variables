@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snmsd-users-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snmsd-users
+  template:
+    metadata:
+      labels:
+        app: snmsd-users
+    spec:
+      containers:
+        - name: snmsd-users
+          image: snmmaurya/snmsd-users:latest
+          env:
+            - name: AUTH_ADDRESS_HOST
+              value: "10.105.58.110"
+            - name: AUTH_ADDRESS_PORT
+              value: "5002"

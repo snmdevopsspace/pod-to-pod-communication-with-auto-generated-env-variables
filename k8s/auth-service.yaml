@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: snmsd-auth-service
+spec:
+  selector: # select the pod
+    app: snmsd-auth
+  type: ClusterIP # wont expose outside the cluster
+  ports:
+    - protocol: TCP
+      port: 5002
+      targetPort: 5002

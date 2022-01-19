@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snmsd-auth-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snmsd-auth
+  template:
+    metadata:
+      labels:
+        app: snmsd-auth
+    spec:
+      containers:
+        - name: snmsd-auth
+          image: snmmaurya/snmsd-auth:latest
